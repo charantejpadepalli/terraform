@@ -1,28 +1,17 @@
-# Terraform state files
-*.tfstate
-*.tfstate.*.backup
-.terraform.tfstate.lock.info
-
-# Terraform generated directories
+# Terraform generated files and directories
 .terraform/
-
-# Terraform plan files
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*backup
 *.tfplan
-*.tfplan.json
-
-# Variable definition files that may contain sensitive data
-*.tfvars
-*.tfvars.json
-
-# Crash logs
+.tfvars
+.tfvars.json
 crash.log
 
-# Override files (if not intentionally tracked)
-*.override.tf
-*.override.tf.json
+# Local overrides
+override.tf
+override.tf.json
 
-# Local CLI configuration files
-.terraformrc
-terraform.rc
-
-.terraform.lock.hcl
+# Provider specific files (if any)
+# For example, if you're using AWS, you might have:
+# .aws/credentials
