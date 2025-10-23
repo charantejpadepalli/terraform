@@ -4,9 +4,9 @@ variable "project" {
 variable "environment" {
   default = "dev"
 }
-variable "common_name" {
-  default = "${var.project}-${var.environment}"
-}
+# variable "common_name" {
+#   default = "${var.project}-${var.environment}"
+# }
 variable "ami_id" {
     type = string
     default = "ami-09c813fb71547fc4f"
@@ -15,12 +15,11 @@ variable "instance_type" {
     type = string
     default = "t3.micro"  
 }
-variable "ec2_tags" {
+variable "common_tags" {
     type = map 
     default = {
-        Name = "terraform-demo"
         Terraform = "true"
-        project = "Joindevops"
+        project = "roboshop"
         environment = "Dev"
     } 
 }
