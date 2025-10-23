@@ -24,8 +24,14 @@ resource "aws_instance" "terraform" {
     inline = [ 
       "sudo dnf install nginx -y",
       "sudo systemctl start nginx"
-     ]
-    
+     ] 
+  }
+  provisioner "remote-exec" {
+    inline = [ 
+      "sudo systemctl stop nginx",
+      "echo 'successfully stopped nginx server'"
+     ] 
+     when = destroy
   }
 }
 
